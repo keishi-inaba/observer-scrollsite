@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=League+Gothic&family=Mohave&family=Montserrat:wght@100&family=Noto+Sans+JP:wght@300&family=Open+Sans:wght@300&family=Raleway:wght@100;200;300&family=Red+Hat+Mono:wght@300;400&family=Roboto:wght@100&family=Titillium+Web:wght@200&family=Ubuntu:ital,wght@1,300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+  color: #fff;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-image: url(./images/main.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+body::after {
+  position: absolute;
+  background-color: #000;
+  width: 100%;
+  height: 500vh;
+  top: 0;
+  left: 0;
+  content: "";
+  opacity: 0.5;
+}
+
+.title {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  font-size: 2rem;
+  opacity: 0;
+}
+
+.title.active {
+  opacity: 1;
+  transition: all 3s;
+}
+
+section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.img-wrap {
+  position: relative;
+  top: 40%;
+  height: 40%;
+  width: 1px;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.img-wrap.active {
+  width: 40vw;
+  opacity: 1;
+  transition: opacity 1s, width 2s;
+}
+
+.img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40vw;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.6);
+}
+
+.img-wrap.title.active > img {
+  transform: scale(1);
+  transition: 1s ease-out;
+}
+
+h2 {
+  position: absolute;
+  font-size: 2.3rem;
+  top: 50%;
+  z-index: 2;
+  letter-spacing: 2px;
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+h2.active {
+  opacity: 1;
+  transition: opacity 3s;
+}
+
+p {
+  position: absolute;
+  font-size: 1.3rem;
+  top: 60%;
+  width: 300px;
+  letter-spacing: 1.5px;
+  z-index: 2;
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+p.active {
+  opacity: 1;
+  transition: opacity 3s;
+}
